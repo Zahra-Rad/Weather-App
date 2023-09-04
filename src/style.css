@@ -81,6 +81,12 @@ p.days-temp {
   color: black;
 }
 
+.pic-today {
+  max-width: 100px;
+  display: inline;
+  margin-top: -10px;
+}
+
 .search {
   margin-left: 0;
 }

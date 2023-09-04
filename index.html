@@ -20,6 +20,7 @@
           <input
             type="search"
             placeholder="Enter a city"
+            autocomplete="off"
             class="input-city col-10 shadow-sm"
             id="city-input"
           />
@@ -27,38 +28,46 @@
           <!-- <input type="button" value="Current" class="input-search col-2" id="current-weather"> -->
         </form>
         <div class="row">
-          <div class="col-3">
-            <img
+          <div class="col-6">
+            <div class="row">
+              <div class="col-5">
+                <img
               src=""
               alt=""
               class="pic-today"
               id="main-icon"
             />
+              </div>
+              <div class="col-7">
+                <h1 id="city"></h1>
+                <p>
+                <span id="current-time"></span>
+                <br />
+                <span class="description" id="description"></span>
+                </p>
+              </div>
+            </div>
           </div>
-          <div class="col-3">
-            <h1 id="city"></h1>
-            <p>
-              <span id="current-time"></span>
-              <br />
-              <span class="description" id="description"></span>
-            </p>
-          </div>
-          <div class="col-3">
-            <h2 id="degree"></h2>
-          </div>
-          <div class="col-3">
-            <button class="selected celsius" id="celsius">
-              °C
-            </button>
-             | 
-             <button class="fahrenheit" id="fahrenheit">
-              °F
-            </button>
-            <p>
-              Humidity: <span id="humidity"></span>%
-              <br />
-              Wind: <span id="wind"></span> km/h
-            </p>
+          <div class="col-6">
+            <div class="row">
+              <div class="col-6">
+                <h2 id="degree"></h2>
+              </div>
+              <div class="col-6">
+                <button class="selected celsius" id="celsius">
+                  °C
+                </button>
+                | 
+                <button class="fahrenheit" id="fahrenheit">
+                  °F
+                </button>
+                <p>
+                  Humidity: <span id="humidity"></span>%
+                <br />
+                  Wind: <span id="wind"></span> km/h
+                </p>
+              </div>
+            </div>
           </div>
         </div>
         <hr />
