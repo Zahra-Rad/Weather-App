@@ -101,11 +101,11 @@ p.days-temp {
   background-color: transparent;
   color: rgb(120, 120, 120);
   text-decoration: none;
-  cursor: pointer;
 }
 
 .selected {
   color: black;
+  cursor: default;
 }
 
 .github-link {
