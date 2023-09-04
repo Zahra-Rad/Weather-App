@@ -7,11 +7,16 @@ function showTemp(response) {
   let degree = document.querySelector("#degree");
   let humidity = document.querySelector("#humidity");
   let wind = document.querySelector("#wind");
+  let icon = document.querySelector("#main-icon");
   city.innerHTML = currentCity;
   description.innerHTML = response.data.weather[0].description;
   degree.innerHTML = Math.round(response.data.main.temp);
   humidity.innerHTML = Math.round(response.data.main.humidity);
   wind.innerHTML = Math.round(response.data.wind.speed);
+  icon.setAttribute(
+    "src",
+    `https://openweathermap.org/img/wn/${response.data.weather[0].icon}@2x.png`
+  );
 }
 
 function showPosition(position) {
@@ -74,12 +79,18 @@ function showThisTemp(response) {
   let humidity = document.querySelector("#humidity");
   let wind = document.querySelector("#wind");
   let cityValue = document.querySelector("#city-input");
+  let icon = document.querySelector("#main-icon");
   cityValue.value = "";
   city.innerHTML = cityInput;
   description.innerHTML = response.data.weather[0].description;
   degree.innerHTML = Math.round(response.data.main.temp);
   humidity.innerHTML = Math.round(response.data.main.humidity);
   wind.innerHTML = Math.round(response.data.wind.speed);
+  icon.setAttribute(
+    "src",
+    `https://openweathermap.org/img/wn/${response.data.weather[0].icon}@2x.png`
+  );
+  icon.setAttribute("alt", response.data.weather[0].description);
 }
 
 function searchCity(event) {
