@@ -109,39 +109,39 @@ searchForm.addEventListener("submit", searchCity);
 
 // Changing Units
 
-function changeToFahrenheit(event) {
-  event.preventDefault();
-  let fahrenheitButton = document.querySelector("#fahrenheit");
-  let celsiusButton = document.querySelector("#celsius");
-  let degree = document.querySelector("#degree");
-  fahrenheitButton.classList.add("selected");
-  celsiusButton.classList.remove("selected");
-  degree.innerHTML = Math.round((celsiusTemp * 9) / 5 + 32);
-  fahrenheitButton.disabled = true;
-  celsiusButton.disabled = false;
-}
+// function changeToFahrenheit(event) {
+//   event.preventDefault();
+//   let fahrenheitButton = document.querySelector("#fahrenheit");
+//   let celsiusButton = document.querySelector("#celsius");
+//   let degree = document.querySelector("#degree");
+//   fahrenheitButton.classList.add("selected");
+//   celsiusButton.classList.remove("selected");
+//   degree.innerHTML = Math.round((celsiusTemp * 9) / 5 + 32);
+//   fahrenheitButton.disabled = true;
+//   celsiusButton.disabled = false;
+// }
 
-function changeToCelsius(event) {
-  event.preventDefault();
-  let fahrenheitButton = document.querySelector("#fahrenheit");
-  let celsiusButton = document.querySelector("#celsius");
-  let degree = document.querySelector("#degree");
-  fahrenheitButton.classList.remove("selected");
-  celsiusButton.classList.add("selected");
-  degree.innerHTML = celsiusTemp;
-  celsiusButton.disabled = true;
-  fahrenheitButton.disabled = false;
-}
+// function changeToCelsius(event) {
+//   event.preventDefault();
+//   let fahrenheitButton = document.querySelector("#fahrenheit");
+//   let celsiusButton = document.querySelector("#celsius");
+//   let degree = document.querySelector("#degree");
+//   fahrenheitButton.classList.remove("selected");
+//   celsiusButton.classList.add("selected");
+//   degree.innerHTML = celsiusTemp;
+//   celsiusButton.disabled = true;
+//   fahrenheitButton.disabled = false;
+// }
 
-let celsiusTemp = null;
+// let celsiusTemp = null;
 
 let celsiusClick = document.querySelector("#celsius");
-let fahrenheitClick = document.querySelector("#fahrenheit");
+// let fahrenheitClick = document.querySelector("#fahrenheit");
 
 celsiusClick.disabled = true;
 
-fahrenheitClick.addEventListener("click", changeToFahrenheit);
-celsiusClick.addEventListener("click", changeToCelsius);
+// fahrenheitClick.addEventListener("click", changeToFahrenheit);
+// celsiusClick.addEventListener("click", changeToCelsius);
 
 //Current Position and Weather
 

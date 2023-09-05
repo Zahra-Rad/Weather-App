@@ -101,6 +101,7 @@ p.days-temp {
 
 .celsius,
 .fahrenheit {
+  padding: 0;
   border: none;
   background-color: transparent;
   color: rgb(120, 120, 120);
