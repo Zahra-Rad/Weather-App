@@ -27,6 +27,25 @@ currentTime.innerHTML = `${clock}, ${currentDay} ${currentMonth} ${currentYear}`
 
 //Search Engine
 
+function displayForecast(response) {
+  console.log(response.data.daily);
+  let forecast = document.querySelector("#forecast");
+  forecast.innerHTML =`<div class="col-2">
+            <strong class="days"> Mon </strong>
+            <img src="images/sunny.png" alt="sunny" class="days-pic" />
+            <p class="days-temp">
+              <strong>34°</strong>
+              &nbsp; &nbsp; 22°
+            </p>
+          </div>`;
+}
+
+function getForecast(coords) {
+  let apiKey = "ab8e7ef210556986d1c9a75d6007b825";
+  let apiUrl = `https://api.openweathermap.org/data/2.5/onecall?lat=${coords.lat}&lon=${coords.lon}&appid=${apiKey}&units=metric`;
+  axios.get(apiUrl).then(displayForecast)
+}
+
 function showThisTemp(response) {
   let city = document.querySelector("#city");
   let cityInput = document
@@ -51,6 +70,7 @@ function showThisTemp(response) {
     `https://openweathermap.org/img/wn/${response.data.weather[0].icon}@2x.png`
   );
   icon.setAttribute("alt", response.data.weather[0].description);
+  getForecast(response.data.coord);
 }
 
 function searchCity(event) {
