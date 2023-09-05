@@ -27,23 +27,39 @@ currentTime.innerHTML = `${clock}, ${currentDay} ${currentMonth} ${currentYear}`
 
 //Search Engine
 
+function formatDay(timeStamp) {
+  let date = new Date(timeStamp * 1000);
+  let day = date.getDay();
+  let days = ["Sun", "Mon", "Tue", "Wed", "Thu", "Fri", "Sat"];
+  return days[day];
+}
+
 function displayForecast(response) {
-  console.log(response.data.daily);
-  let forecast = document.querySelector("#forecast");
-  forecast.innerHTML =`<div class="col-2">
-            <strong class="days"> Mon </strong>
-            <img src="images/sunny.png" alt="sunny" class="days-pic" />
-            <p class="days-temp">
-              <strong>34°</strong>
-              &nbsp; &nbsp; 22°
-            </p>
-          </div>`;
+  let forecast = response.data.daily;
+  let forecastElement = document.querySelector("#forecast");
+  forecastElement.innerHTML = "";
+  forecast.forEach(function (forecastDay, index) {
+    if (index > 0 && index < 7) {
+      forecastElement.innerHTML += `<div class="col-2">
+              <strong class="days">${formatDay(forecastDay.dt)}</strong>
+              <img src="https://openweathermap.org/img/wn/${
+                forecastDay.weather[0].icon
+              }@2x.png" alt="${
+        forecastDay.weather[0].description
+      }" class="days-pic" />
+              <p class="days-temp">
+                <strong>${Math.round(forecastDay.temp.max)}°</strong>
+                &nbsp; &nbsp; ${Math.round(forecastDay.temp.min)}°
+              </p>
+            </div>`;
+    }
+  });
 }
 
 function getForecast(coords) {
   let apiKey = "ab8e7ef210556986d1c9a75d6007b825";
   let apiUrl = `https://api.openweathermap.org/data/2.5/onecall?lat=${coords.lat}&lon=${coords.lon}&appid=${apiKey}&units=metric`;
-  axios.get(apiUrl).then(displayForecast)
+  axios.get(apiUrl).then(displayForecast);
 }
 
 function showThisTemp(response) {

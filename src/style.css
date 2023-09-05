@@ -87,6 +87,10 @@ p.days-temp {
   margin-top: -10px;
 }
 
+.days-pic {
+  max-width: 50px;
+}
+
 .search {
   margin-left: 0;
 }
