@@ -1,4 +1,4 @@
-# Teresa
+# Weather-App
  
 - 📎 [Demo Project](https://zahra-rad.github.io/Weather-App/)
 
